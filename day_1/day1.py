@@ -9,11 +9,11 @@ Find the Elf carrying the most Calories
 calory_count = []
 count = 0
 with open("input.txt",'r') as fp:
-    # Read each line
     for line in fp:
         if line == '\n':
             calory_count.append(count)
             count = 0
         else:
             count += int(line)
-print(max(calory_count))
+sorted_calory_count = sorted(calory_count,reverse=True)
+print(sum(sorted_calory_count[:3]))
