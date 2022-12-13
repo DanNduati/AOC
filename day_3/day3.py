@@ -32,9 +32,11 @@ def calc_priority_rucksack() -> int:
                     break  # Expecting only one misplaced item
     return priority
 
+
 def find_badge_type(ls: list[str]) -> str:
-    common = set.intersection(*map(set,ls))
-    return(str(list(common)[0]))
+    common = set.intersection(*map(set, ls))
+    return str(list(common)[0])
+
 
 def calc_priority_group() -> int:
     group = []
@@ -44,8 +46,8 @@ def calc_priority_group() -> int:
         for line in fp:
             line = line.strip()
             group.append(line)
-            count +=1
-            if count%3==0:
+            count += 1
+            if count % 3 == 0:
                 # Find the badge type for the group
                 badge_type = find_badge_type(group)
                 # Calculate priority
@@ -53,9 +55,11 @@ def calc_priority_group() -> int:
                 group.clear()
     return priority
 
+
 def main():
     print(calc_priority_rucksack())
     print(calc_priority_group())
+
 
 if __name__ == "__main__":
     main()
